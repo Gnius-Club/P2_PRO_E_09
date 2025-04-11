@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Sesión 9: ¡Calidad Feature Adicional 1!</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #ffa500; color: white; text-align: center; padding: 10px; } /* Orange Accent */
+        .activity { margin-bottom: 20px; }
+        .banner {
+            background-color: #ffa500; /* Orange Accent */
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+            list-style: none;
+            display: block;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+         ul, ol {
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .time-title { margin-bottom: 20px; text-align: center; font-size: 1.2em; color: #555;}
+
+        summary {
+           display: block;
+           list-style: none;
+        }
+        summary::-webkit-details-marker {
+           display: none;
+        }
+
+    </style>
+    <script>
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            if (content) {
+                if (content.style.display === "none" || content.style.display === "") {
+                    content.style.display = "block";
+                } else {
+                    content.style.display = "none";
+                }
+            }
+        }
+
+        window.onload = () => {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.style.display = 'none';
+            });
+        };
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook - Sesión 9: ¡Calidad Feature Adicional 1!</h1>
+    </div>
+    <div class="container">
+        <h2 class="time-title">Tiempo efectivo de clase: 40 minutos</h2>
+
+        <!-- Resumen de Sesión -->
+        <div id="activity-0" class="activity">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">📝 Resumen de Sesión</div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table>
+                    <tr>
+                        <td style="width: 50%; padding: 10px; border-right: 1px solid #ddd;">
+                            <strong>🎯 Objetivo de la Sesión:</strong>
+                            <ul>
+                                <li>Probar la nueva característica adicional (Feature 1) desarrollada.</li>
+                                <li>Verificar su correcta integración con el núcleo del prototipo.</li>
+                                <li>Identificar y corregir bugs específicos de la Feature 1 o de su interacción con el resto del proyecto.</li>
+                            </ul>
+                            <strong>⏱️ Duración Estimada:</strong> 40 minutos.
+                        </td>
+                        <td style="width: 50%; padding: 10px;">
+                            <strong>🔑 Entregable Clave:</strong>
+                            <ul>
+                                <li>Feature 1 probada funcionalmente y en integración.</li>
+                                <li>Bugs de la Feature 1 identificados y (idealmente) corregidos.</li>
+                                <li>Tablero Kanban actualizado reflejando el estado de las tareas de la Feature 1.</li>
+                            </ul>
+                             <strong>🛠️ Materiales/Preparación:</strong>
+                            <ul>
+                                <li>Dispositivos con acceso a Scratch y los proyectos con la Feature 1 en desarrollo/integrada.</li>
+                                <li>Tablero Kanban de cada equipo actualizado.</li>
+                                <li>Acceso al T-Bar, diseño del núcleo y diseño de la Feature 1.</li>
+                                <li>Proyector o pantalla.</li>
+                                <li>Método para documentar bugs (post-its, notas digitales, etc.).</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Desarrollo de la Sesión -->
+
+        <!-- Actividad 1: Stand-up Calidad Feature 1 -->
+        <div id="activity-1" class="activity">
+             <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🧐 Actividad 1: Stand-up Calidad Feature 1 ⏰ Tiempo: 5 minutos</div>
+             </div>
+            <div id="activity_1_content" class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (1 min):</strong> Iniciar sesión, enfocar en probar la calidad de la Feature 1.
+                                (<strong>Proyectar Diapositiva 1</strong>: Título "Sesión 9: ¡Calidad Feature 1!" y Objetivo: "¡Asegurar que nuestra expansión funciona perfecto!").
+                            </td>
+                            <td>
+                                "¡Equipos Pro! Hoy ponemos bajo la lupa esa increíble Feature 1 que han estado construyendo. Es la sesión de Calidad: vamos a probarla a fondo y asegurarnos de que funciona de maravilla y se lleva bien con el resto del proyecto."
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (4 min):</strong> Guiar stand-up enfocado en tareas de Feature 1 en 'Listo para Probar (🔬)' o recién movidas a '¡Listo!'.
+                                (<strong>Proyectar Diapositiva 2</strong>: Visual del Kanban resaltando tareas de Feature 1 listas para prueba. Pregunta: "¿Qué parte de la Feature 1 testeamos hoy? ¿Y su integración?").
+                            </td>
+                            <td>
+                                "Miren su Kanban. ¿Qué tareas específicas de la Feature 1 tienen listas para probar hoy (en 'Listo para Probar' o que acaban de terminar)?"
+                                <br><br>
+                                "Testers, ¿cuál será el foco principal de sus pruebas hoy? ¿Probarán la funcionalidad de la feature en sí misma? ¿O cómo interactúa con el núcleo que ya teníamos?"
+                                <br><br>
+                                <em>(Facilitar que cada equipo identifique qué aspecto de la Feature 1 (su funcionamiento interno o su integración) van a probar prioritariamente).</em>
+                                <br><br>
+                                "¡Plan de pruebas listo! ¡A verificar esa nueva funcionalidad!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 2: ¡Probando lo Nuevo! Ciclo Prueba-Corrección Feature 1 -->
+        <div id="activity-2" class="activity">
+             <div class="banner" onclick="toggleContent('activity_2_content')">
+                 <div class="title">✨ Actividad 2: ¡Probando lo Nuevo! Ciclo Prueba-Corrección Feature 1 ⏰ Tiempo: 30 minutos</div>
+             </div>
+            <div id="activity_2_content" class="content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (30 min - Bloque Principal):</strong> Facilitar ciclo de prueba (Tester lidera) y corrección (Programador) enfocado en la Feature 1 y su integración. Arquitecto supervisa integración y coherencia. Circular y apoyar.
+                                (<strong>Proyectar Diapositiva 3</strong>: Diagrama Ciclo Prueba-Corrección enfocado en Feature 1: Tester prueba feature E integración 🔬🧩, reporta bugs 🐞📝, Programador corrige 💻, Arquitecto supervisa 🤔).
+                            </td>
+                            <td>
+                                "¡A probar esa Feature 1 a fondo! Tienen 30 minutos para este ciclo de calidad."
+                                <br><br>
+                                "<strong>Testers Creativos/as:</strong> ¡Lideren las pruebas! Ejecuten la Feature 1. ¿Funciona como se diseñó? Y crucial: ¿Funciona bien CON el resto del proyecto (el núcleo)? ¿Rompe algo que antes funcionaba? ¡Documenten cualquier bug, sea de la feature o de la integración!"
+                                <br><br>
+                                "<strong>Programadores/as Scratch:</strong> Reciban el feedback y ¡a corregir! Arreglen los bugs encontrados en la Feature 1 o en cómo interactúa con el núcleo."
+                                <br><br>
+                                "<strong>Arquitectos/as Digitales:</strong> ¡Supervisen la integración! Asegúrense de que la feature encaja bien en el sistema general. Ayuden a diagnosticar problemas de interacción entre la feature y el núcleo."
+                                <br><br>
+                                "¡Queremos una Feature 1 funcional y bien integrada!"
+                                <br><br>
+                                <em>(Circular activamente. Ayudar a los Testers a probar tanto la feature aislada como su interacción. Apoyar a Programadores a depurar problemas específicos de la feature o su integración. Fomentar diálogo sobre cómo la feature afecta el comportamiento general).</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (Integrado en los 30 min):</strong> Gestionar flujo Kanban para tareas de Feature 1 (Pasar a '¡Listo!' o volver a 'Haciendo').
+                                (<strong>Proyectar Diapositiva 4</strong>: Recordatorio Flujo Kanban: 🔬 -> ✅ (Pasa), 🔬 -> ⚙️ (Falla + Nota 📝🐞), aplicado a tareas de Feature 1).
+                            </td>
+                            <td>
+                                <em>(Recordar el flujo Kanban para las tareas de la Feature 1):</em>
+                                <br>
+                                "¡Actualicen el Kanban según los resultados de las pruebas de la Feature 1!"
+                                <br><br>
+                                "Si una tarea de la feature pasa todas las pruebas (funcionalidad E integración), ¡genial! Muévanla a '¡Listo! (✅)'."
+                                <br><br>
+                                "Si encuentran bugs, la tarea vuelve a 'Haciendo (⚙️)' con la nota del bug encontrado. ¡A corregir!"
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Actividad 3: Cierre Rápido Calidad Feature 1 -->
+        <div id="activity-3" class="activity">
+            <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">⏱️ Actividad 3: Cierre Rápido Calidad Feature 1 ⏰ Tiempo: 5 minutos</div>
+            </div>
+            <div id="activity_3_content" class="content">
+                 <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">Acción</th>
+                            <th style="width: 50%;">Diálogo del Maestro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <strong>Paso 1 (3 min):</strong> Revisar Kanban. Preguntar: ¿Feature 1 funciona bien y está integrada?
+                            </td>
+                            <td>
+                                "¡Últimos minutos, Equipos Pro! Revisemos el estado de la Feature 1."
+                                <br><br>
+                                "Mirando su Kanban y recordando las pruebas: ¿Cómo quedó la Feature 1? ¿Funciona correctamente? ¿Está bien integrada con el núcleo?"
+                                <br><br>
+                                <em>(Facilitar una evaluación rápida por equipo sobre la calidad y estado de integración de la Feature 1).</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <strong>Paso 2 (2 min):</strong> Cerrar sesión. Recordar guardar. Anticipar Sesión 10 (Optimización o Feature 2).
+                                (<strong>Proyectar Diapositiva 5</strong>: Mensaje "¡Feature 1 Verificada! ✅✨ Guardar. Próxima decisión: ¿Optimizar o Feature 2? 🤔").
+                            </td>
+                            <td>
+                                "¡Gran trabajo probando y mejorando la Feature 1 hoy!"
+                                <br><br>
+                                "¡Imprescindible GUARDAR esta versión con la feature probada!"
+                                <br><br>
+                                "En la próxima sesión, tomaremos una decisión estratégica: ¿dedicamos tiempo a pulir y optimizar lo que ya tenemos, o nos lanzamos a planificar una segunda feature adicional (Feature 2)?"
+                                <br><br>
+                                "¡Piensen en el estado de su proyecto! Nos vemos en la Sesión 10."
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div> <!-- Fin del container -->
+</body>
+</html>
