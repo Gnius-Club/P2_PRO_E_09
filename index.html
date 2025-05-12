@@ -14,12 +14,21 @@
             color: white;
             padding: 10px;
             cursor: pointer;
-            margin-bottom: 10px;
+            margin-bottom: 10px; /* Adjusted for spacing */
             font-weight: bold;
             list-style: none;
             display: block;
+            border-radius: 5px; /* Rounded corners for banner */
         }
-        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+        .content { 
+            display: none; 
+            padding: 15px; 
+            border: 1px solid #ddd; 
+            margin-bottom: 10px; 
+            border-radius: 5px; /* Rounded corners for content */
+            margin-top: -10px; /* Visual connection with banner */
+            padding-top: 20px; /* Avoid text clash */
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -43,13 +52,16 @@
         }
         .time-title { margin-bottom: 20px; text-align: center; font-size: 1.2em; color: #555;}
 
-        summary {
-           display: block;
-           list-style: none;
+        /* Making facilitator instructions clearer */
+        td em, td i { /* Style for italicized facilitator notes */
+            color: #555;
+            font-style: italic;
+            display: block; /* Put notes on new lines */
+            margin-top: 5px;
         }
-        summary::-webkit-details-marker {
-           display: none;
-        }
+        /* Ensure step <strong> tags render bold */
+        td strong { font-weight: bold; } /* General strong for keywords */
+        td > strong { display: block; margin-bottom: 5px; } /* For step headers */
 
     </style>
     <script>
@@ -69,6 +81,11 @@
             contents.forEach(content => {
                 content.style.display = 'none';
             });
+            // Open "Resumen de Sesión" by default
+            const resumenContent = document.getElementById('activity_0_content');
+            if (resumenContent) {
+                resumenContent.style.display = 'block';
+            }
         };
     </script>
 </head>
@@ -84,7 +101,7 @@
             <div class="banner" onclick="toggleContent('activity_0_content')">
                 <div class="title">📝 Resumen de Sesión</div>
             </div>
-            <div id="activity_0_content" class="content">
+            <div id="activity_0_content" class="content" style="display: block;">
                 <table>
                     <tr>
                         <td style="width: 50%; padding: 10px; border-right: 1px solid #ddd;">
@@ -135,8 +152,11 @@
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Paso 1 (1 min):</strong> Iniciar sesión, enfocar en probar la calidad de la Feature 1.
-                                (<strong>Proyectar Diapositiva 1</strong>: Título "Sesión 9: ¡Calidad Feature 1!" y Objetivo: "¡Asegurar que nuestra expansión funciona perfecto!").
+                                <strong>Paso 1 (1 min):</strong>
+                                <ul>
+                                    <li>Iniciar sesión, enfocar en probar la calidad de la Feature 1.</li>
+                                    <li><strong>Proyectar Diapositiva 1</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Equipos Pro! Hoy ponemos bajo la lupa esa increíble Feature 1 que han estado construyendo. Es la sesión de Calidad: vamos a probarla a fondo y asegurarnos de que funciona de maravilla y se lleva bien con el resto del proyecto."
@@ -144,8 +164,11 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Paso 2 (4 min):</strong> Guiar stand-up enfocado en tareas de Feature 1 en 'Listo para Probar (🔬)' o recién movidas a '¡Listo!'.
-                                (<strong>Proyectar Diapositiva 2</strong>: Visual del Kanban resaltando tareas de Feature 1 listas para prueba. Pregunta: "¿Qué parte de la Feature 1 testeamos hoy? ¿Y su integración?").
+                                <strong>Paso 2 (4 min):</strong>
+                                <ul>
+                                    <li>Guiar stand-up enfocado en tareas de Feature 1 en 'Listo para Probar (🔬)' o recién movidas a '¡Listo!'.</li>
+                                    <li><strong>Proyectar Diapositiva 2</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "Miren su Kanban. ¿Qué tareas específicas de la Feature 1 tienen listas para probar hoy (en 'Listo para Probar' o que acaban de terminar)?"
@@ -178,8 +201,13 @@
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Paso 1 (30 min - Bloque Principal):</strong> Facilitar ciclo de prueba (Tester lidera) y corrección (Programador) enfocado en la Feature 1 y su integración. Arquitecto supervisa integración y coherencia. Circular y apoyar.
-                                (<strong>Proyectar Diapositiva 3</strong>: Diagrama Ciclo Prueba-Corrección enfocado en Feature 1: Tester prueba feature E integración 🔬🧩, reporta bugs 🐞📝, Programador corrige 💻, Arquitecto supervisa 🤔).
+                                <strong>Paso 1 (30 min - Bloque Principal):</strong>
+                                <ul>
+                                    <li>Facilitar ciclo de prueba (Tester lidera) y corrección (Programador) enfocado en la Feature 1 y su integración.</li>
+                                    <li>Arquitecto supervisa integración y coherencia.</li>
+                                    <li>Circular y apoyar.</li>
+                                    <li><strong>Proyectar Diapositiva 3</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡A probar esa Feature 1 a fondo! Tienen 30 minutos para este ciclo de calidad."
@@ -197,8 +225,11 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Paso 2 (Integrado en los 30 min):</strong> Gestionar flujo Kanban para tareas de Feature 1 (Pasar a '¡Listo!' o volver a 'Haciendo').
-                                (<strong>Proyectar Diapositiva 4</strong>: Recordatorio Flujo Kanban: 🔬 -> ✅ (Pasa), 🔬 -> ⚙️ (Falla + Nota 📝🐞), aplicado a tareas de Feature 1).
+                                <strong>Paso 2 (Integrado en los 30 min):</strong>
+                                <ul>
+                                    <li>Gestionar flujo Kanban para tareas de Feature 1 (Pasar a '¡Listo!' o volver a 'Haciendo').</li>
+                                    <li><strong>Proyectar Diapositiva 4</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 <em>(Recordar el flujo Kanban para las tareas de la Feature 1):</em>
@@ -231,7 +262,11 @@
                     <tbody>
                         <tr>
                             <td>
-                                <strong>Paso 1 (3 min):</strong> Revisar Kanban. Preguntar: ¿Feature 1 funciona bien y está integrada?
+                                <strong>Paso 1 (3 min):</strong>
+                                <ul>
+                                    <li>Revisar Kanban.</li>
+                                    <li>Preguntar: ¿Feature 1 funciona bien y está integrada?</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Últimos minutos, Equipos Pro! Revisemos el estado de la Feature 1."
@@ -243,8 +278,13 @@
                         </tr>
                         <tr>
                             <td>
-                                <strong>Paso 2 (2 min):</strong> Cerrar sesión. Recordar guardar. Anticipar Sesión 10 (Optimización o Feature 2).
-                                (<strong>Proyectar Diapositiva 5</strong>: Mensaje "¡Feature 1 Verificada! ✅✨ Guardar. Próxima decisión: ¿Optimizar o Feature 2? 🤔").
+                                <strong>Paso 2 (2 min):</strong>
+                                <ul>
+                                    <li>Cerrar sesión.</li>
+                                    <li>Recordar guardar.</li>
+                                    <li>Anticipar Sesión 10 (Optimización o Feature 2).</li>
+                                    <li><strong>Proyectar Diapositiva 5</strong>.</li>
+                                </ul>
                             </td>
                             <td>
                                 "¡Gran trabajo probando y mejorando la Feature 1 hoy!"
